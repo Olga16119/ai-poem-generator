@@ -3,7 +3,7 @@ function displayPoem(responce) {
     strings: responce.data.answer,
     autoStart: true,
     cursor: "",
-    delay: 1,
+    delay: 10,
   });
 }
 
@@ -18,6 +18,10 @@ function generatePoem(event) {
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
   axios.get(apiUrl).then(displayPoem);
+
+  let poemElement = document.querySelector("#poem");
+  poemElement.classList.remove("hidden");
+  poemElement.innerHTML = `<div class="blink">⌛ Generating a French poem about ${instructionElement.value}</div>`;
 }
 
 let poemFormElement = document.querySelector("#poem-form");

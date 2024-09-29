@@ -14,11 +14,7 @@ a {
 }
 
 form {
-  padding: 25px;
-  margin-bottom: 30px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  display: flex;
 }
 
 footer {
@@ -30,6 +26,20 @@ footer {
   max-width: 600px;
   margin: 130px auto;
   padding: 15px;
+}
+
+.form-wrapper {
+  padding: 25px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+.hint {
+  font-size: 12px;
+  margin-top: 7px;
+  opacity: 0.5;
 }
 
 .instructions {
@@ -63,4 +73,17 @@ footer {
 
 .poem strong {
   color: #885df1;
+}
+
+.hidden {
+  display: none;
+}
+
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
